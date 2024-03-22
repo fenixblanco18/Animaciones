@@ -34,7 +34,7 @@ public class Jason : MonoBehaviour
         } else {
             andando=false;
         }
-        GetComponent<Animator>().SetBool("Andando",andando);
+        GetComponent<Animator>().SetBool("Andar",andando);
     }
     void Mover(){
         transform.Translate(0,0,v*speed*Time.deltaTime);
