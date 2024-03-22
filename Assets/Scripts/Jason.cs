@@ -13,8 +13,8 @@ public class Jason : MonoBehaviour
 
     private float h, v;
 
-    bool andando = false;
-    bool corriendo = false;
+    bool Andar = false;
+    bool Correr = false;
     void Start()
     {
         
@@ -30,11 +30,11 @@ public class Jason : MonoBehaviour
     }
     void Animar(){
         if (v>0){
-            andando=true;
+            Andar=true;
         } else {
-            andando=false;
+            Andar=false;
         }
-        GetComponent<Animator>().SetBool("Andar",andando);
+        GetComponent<Animator>().SetBool("Andar",Andar);
     }
     void Mover(){
         transform.Translate(0,0,v*speed*Time.deltaTime);
