@@ -32,9 +32,20 @@ public class Jason : MonoBehaviour
         if (v>0){
             Andar=true;
         } else {
-            Andar=false;
-        }
+            Andar = false;
+            Correr = false;
+        }    
+        if (Input.GetKey(KeyCode.LeftShift))
+            {
+                Correr = true;
+            }
+            else
+            {
+                Correr = false;
+            }
+        
         GetComponent<Animator>().SetBool("Andar",Andar);
+        GetComponent<Animator>().SetBool("Correr",Correr);
     }
     void Mover(){
         transform.Translate(0,0,v*speed*Time.deltaTime);
