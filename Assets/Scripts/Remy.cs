@@ -7,18 +7,18 @@ public class Remy : MonoBehaviour
 {
 
     [SerializeField]
-    private float speed;
+    private float walkSpeed;
+    [SerializeField]
+    private float runSpeed;
     [SerializeField]
     private float angularSpeed;
 
+    private float speed;
+
     private float h, v;
 
-    bool andando = false;
-    bool corriendo = false;
-    void Start()
-    {
-        
-    }
+    bool Andando = false;
+    bool Corriendo = false;
 
     // Update is called once per frame
     void Update()
@@ -28,16 +28,42 @@ public class Remy : MonoBehaviour
         Animar();
         Mover();
     }
-    void Animar(){
-        if (v>0){
-            andando=true;
-        } else {
-            andando=false;
+    void Animar()
+    {
+        if (v > 0)
+        {
+            Andando = true;
+            if (Input.GetKey(KeyCode.LeftShift))
+            {
+                Corriendo = true;
+            }
+            else
+            {
+                Corriendo = false;
+            }
         }
-        GetComponent<Animator>().SetBool("Andando",andando);
+        else
+        {
+            Andando = false;
+            Corriendo = false;
+        }
+        GetComponent<Animator>().SetBool("Andando", Andando);
+        GetComponent<Animator>().SetBool("Corriendo", Corriendo);
     }
-    void Mover(){
-        transform.Translate(0,0,v*speed*Time.deltaTime);
-        transform.Rotate(0,h*angularSpeed*Time.deltaTime,0);
+    void Mover()
+    {
+        if (v > 0)
+        {
+            if (Corriendo)
+            {
+                speed = runSpeed;
+            }
+            else if (Andando)
+            {
+                speed = walkSpeed;
+            }
+            transform.Translate(0, 0, v * speed * Time.deltaTime);
+        }
+        transform.Rotate(0, h * angularSpeed * Time.deltaTime, 0);
     }
 }
