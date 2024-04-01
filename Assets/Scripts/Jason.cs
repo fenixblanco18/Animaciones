@@ -48,6 +48,9 @@ public class Jason : MonoBehaviour
         GetComponent<Animator>().SetBool("Correr",Correr);
     }
     void Mover(){
+
+
+
         transform.Translate(0,0,v*speed*Time.deltaTime);
         transform.Rotate(0,h*angularSpeed*Time.deltaTime,0);
     }
