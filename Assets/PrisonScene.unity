@@ -1518,6 +1518,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EspiaPortatil
       objectReference: {fileID: 0}
+    - target: {fileID: 4382270670318320017, guid: 4e21166977dc84849ac2ef58e8451d1c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6513870480195284397, guid: 4e21166977dc84849ac2ef58e8451d1c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -8.691345
@@ -1574,6 +1578,10 @@ PrefabInstance:
     - target: {fileID: 4382270670318320017, guid: 4e21166977dc84849ac2ef58e8451d1c, type: 3}
       propertyPath: m_Name
       value: EspiaPortatil (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4382270670318320017, guid: 4e21166977dc84849ac2ef58e8451d1c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6513870480195284397, guid: 4e21166977dc84849ac2ef58e8451d1c, type: 3}
       propertyPath: m_LocalPosition.x
